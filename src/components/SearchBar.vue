@@ -32,7 +32,8 @@ export default {
 
 <template>
     <div class="container">
-       <div class="left">Video Series
+       <div class="left"><img src="../assets/video-series.png" alt="facebook" style="cursor: pointer;">
+
         <button class="all" @click="emitClickEvent">All</button>
        <input class="search-box" placeholder="Search for the video series">
        <button class="search-icon"><img src="../assets/search.png" width="20px"></button>
@@ -54,6 +55,7 @@ export default {
     justify-content: space-between;
     color: #d24115;
     background-color: white;
+    margin-top: 10px;
 }
 .left {
     font-weight: bold;
@@ -84,10 +86,10 @@ span {
 .login {
     border: 1px solid transparent;
     border-radius: 6px;
-    background-color: #d24115;
+    background-color: #ea580c;
     color: white;
-    height: 5.6vh;
-    width: 20vh;
+    height: 20px;
+    width: 40px;
     cursor: pointer;
 }
 .greetings h1,

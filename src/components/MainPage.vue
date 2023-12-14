@@ -40,7 +40,8 @@ export default {
 <template>
     <div class="home-section">
         <span>Home</span>
-        <span class="span-sec">>संतवाणी</span>
+        <span class="span-sec">                    
+            <img src="../assets/gray-arrow.png" alt="facebook" width="10px" height="10px" style="cursor: pointer;"> संतवाणी</span>
     </div>
     <div class="topic" v-if="apiDetails.details">{{ apiDetails.details.title }}</div>
     <div class="mainn">
