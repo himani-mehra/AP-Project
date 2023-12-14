@@ -22,7 +22,7 @@ onMounted(async () => {
     }
 });
 const showSubDropdown = (tagGroup) => {
-  hoveredTagGroup.value = tagGroup;
+    hoveredTagGroup.value = tagGroup;
 };
 
 </script>
@@ -40,16 +40,27 @@ const showSubDropdown = (tagGroup) => {
                             <div class="main-dropdown-item" @mouseover="showSubDropdown(innerArray)">
                                 {{ element.name.english }}
                             </div>
-                            <div v-if="element.hasChildren">*</div>
+
+                            <div class="arrow" v-if="element.hasChildren">
+                                <img src="../assets/gray-arrow.png" alt="gray arrow" class="gray-arrow" />
+                                <img src="../assets/orange-arrow.png" alt="orange arrow" class="orange-arrow" />
+                            </div>
                         </div>
                     </div>
                     {{ element }}
-                    <div v-if="hoveredTagGroup" class="dropdown sub-dropdown">
-                        <div v-for="tag in hoveredTagGroup" :key="tag.tagId" class="sub-dropdown-item">
-                            <!-- {{ tag }} -->
+                </div>
+                <div v-if="hoveredTagGroup" class="dropdown sub-dropdown">
+                        <!-- <div v-for="tag in hoveredTagGroup" :key="tag.tagId" class="sub-dropdown-item">
+                            {{ tag }}
+                        </div> -->
+                        <div v-for="(innerArray, outerIndex) in tags" :key="outerIndex">
+                        <div v-for="(element, innerIndex) in innerArray[0]" :key="innerIndex" class="display-flex">
+                            <div class="main-dropdown-item">
+                                {{ element.name.english }}
+                            </div>
                         </div>
                     </div>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -84,7 +95,6 @@ const showSubDropdown = (tagGroup) => {
 .dropdown {
     max-height: 300px;
     overflow-y: auto;
-    /* border: 1px solid #ccc; */
 }
 
 .main-dropdown {
@@ -94,20 +104,68 @@ const showSubDropdown = (tagGroup) => {
 .sub-dropdown {
     flex: 1;
 }
+
 .display-flex {
     display: flex;
+    align-items: center;
+    color: #ee7a3e;
 }
+
+/* .arrow {
+    margin-top: 8px;
+} */
+.arrow {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure the image covers the container */
+    transition: opacity 0.3s ease, display 0s 0.3s;
+    /* Delay display change to avoid flicker */
+}
+
+.arrow .gray-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    z-index: 1;
+}
+
+.arrow .orange-arrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+}
+
+.arrow:hover .gray-arrow {
+    opacity: 0;
+    display: none;
+}
+
+.arrow:hover .orange-arrow {
+    opacity: 1;
+}
+
 .main-dropdown-item {
     font-weight: 700;
-    color: #61666e;
+    color: #515151;
 }
+
 .main-dropdown-item:hover {
     color: #ee7a3e;
 }
+
 .main-dropdown-item,
 .sub-dropdown-item {
     padding: 8px;
-    /* border-bottom: 1px solid #ccc; */
     cursor: pointer;
-}
-</style>
+}</style>
