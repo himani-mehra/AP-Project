@@ -1,62 +1,59 @@
-<!-- <script setup>
-defineProps({
-  msg: {
-    type: String,
-    required: true
-  }
-})
-</script> -->
+
 
 <template>
+   <div class="main-container">
     <div class="container">
         <span>Logo</span>
         <span>Home</span>
-        <span>Live sessions</span>
+        <span class="down-arrow">
+          <span class="live-session">Live Sessions</span>
+          <img class="img-sec" src="../assets/inverted-arrow.png" alt="facebook" width="15px" height="15px" style="cursor: pointer;">
+        </span>
         <span>Video Series</span>
         <span>AP books</span>
         <span>AP articles</span>
-        <span>Invite</span>
-        <span>In media</span>
+        <span class="down-arrow">
+          <span class="live-session">Invite</span>
+          <img class="img-sec" src="../assets/inverted-arrow.png" alt="facebook" width="15px" height="15px" style="cursor: pointer;">
+        </span>
+        <span>In Media</span>
         <span>Donate</span>
     </div>
+    <div class="right-container">
+      <img src="../assets/right-header.png" alt="contact" style="cursor: pointer;">
+    </div>
+   </div>
     <div class="second-container">
         <div class="access-text">Get access to all 350+ video series at once!</div>
-        <div class="access-btn">Click Here</div>
+        <div class="access-btn"><a href="https://acharyaprashant.org/en/login?page=https%3A%2F%2Facharyaprashant.org%2Fen%2Fpacks%2Fall-video-series" target="_blank">Click Here</a></div>
     </div>
-  <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
-    <!-- <h3>
-      You’ve successfully created a project with
-      <a href="https://vitejs.dev/" target="_blank" rel="noopener">Vite</a> +
-      <a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 3</a>.
-    </h3> -->
-  </div>
 </template>
 
 <style scoped>
-
-h1 {
-  font-weight: 500;
-  font-size: 2.6rem;
-  position: relative;
-  top: -10px;
-}
-
-h3 {
-  font-size: 1.2rem;
+.main-container {
+  height: 7.3vh;
+  display: flex;
+  justify-content: space-between;
+  background-color: #d24115;
 }
 .container {
     align-items: center;
-    width:100%;
-    height: 7vh;
+    width:57%;
     display: flex;
     justify-content: space-around;
     color: rgb(233, 228, 228);
-    background-color: #d24115;
 }
 span {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 15px;
+}
+.down-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.img-sec {
+  margin-top: 6px;
 }
 .second-container {
     display: flex;
@@ -76,6 +73,9 @@ span {
     border: 1px solid white;
     border-radius: 8px;
     margin: 10px;
+}
+.access-btn:hover {
+  color: white;
 }
 
 .greetings h1,

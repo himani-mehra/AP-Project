@@ -37,7 +37,8 @@ const showSubDropdown = (tagGroup) => {
                     </div>
                     <div v-for="(innerArray, outerIndex) in tags" :key="outerIndex">
                         <div v-for="(element, innerIndex) in innerArray[0]" :key="innerIndex" class="display-flex">
-                            <div class="main-dropdown-item" @mouseover="showSubDropdown(innerArray)">
+                            <div class="main-dropdown-item"
+                                @mouseover="element.hasChildren ? showSubDropdown(innerArray) : showSubDropdown(null)">
                                 {{ element.name.english }}
                             </div>
 
@@ -47,18 +48,18 @@ const showSubDropdown = (tagGroup) => {
                             </div>
                         </div>
                     </div>
-                    {{ element }}
+                    <!-- {{ element }} -->
                 </div>
                 <div v-if="hoveredTagGroup" class="dropdown sub-dropdown">
-                        <div v-for="(innerArray, outerIndex) in tags" :key="outerIndex">
+                    <div v-for="(innerArray, outerIndex) in tags" :key="outerIndex">
                         <div v-for="(element, innerIndex) in innerArray[1]" :key="innerIndex" class="display-flex">
                             <div class="main-dropdown-item">
-                                <!-- {{ element.name.english }} -->
                                 {{ element.name.english }}
+                                <!-- {{ element }} -->
                             </div>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -166,4 +167,5 @@ const showSubDropdown = (tagGroup) => {
 .sub-dropdown-item {
     padding: 8px;
     cursor: pointer;
-}</style>
+}
+</style>
