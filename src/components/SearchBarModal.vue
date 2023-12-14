@@ -50,12 +50,10 @@ const showSubDropdown = (tagGroup) => {
                     {{ element }}
                 </div>
                 <div v-if="hoveredTagGroup" class="dropdown sub-dropdown">
-                        <!-- <div v-for="tag in hoveredTagGroup" :key="tag.tagId" class="sub-dropdown-item">
-                            {{ tag }}
-                        </div> -->
                         <div v-for="(innerArray, outerIndex) in tags" :key="outerIndex">
-                        <div v-for="(element, innerIndex) in innerArray[0]" :key="innerIndex" class="display-flex">
+                        <div v-for="(element, innerIndex) in innerArray[1]" :key="innerIndex" class="display-flex">
                             <div class="main-dropdown-item">
+                                <!-- {{ element.name.english }} -->
                                 {{ element.name.english }}
                             </div>
                         </div>
