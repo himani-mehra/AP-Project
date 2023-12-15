@@ -40,7 +40,7 @@ export default {
                     <img class="down-arrow" src="../assets/down-arrow.png" width="15px" height="15px">
                 </div>
                 <input class="search-box" placeholder="Search for the video series" @click.stop="emitClickEvent">
-                <button class="search-icon">
+                <button class="search-icon" @click.stop="emitClickEvent">
                     <img src="../assets/search.png" width="20px">
                 </button>
             </div>
