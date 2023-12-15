@@ -178,6 +178,8 @@ export default {
             hierarchicalStructure: [],
         };
     },
+
+
     methods: {
         fetchData() {
             fetch(this.apiUrl)
@@ -218,6 +220,9 @@ export default {
                 }
             });
         },
+        closeModal() {
+            this.$emit('close');
+        },
     },
     mounted() {
         this.fetchData();
@@ -235,7 +240,7 @@ export default {
             <div class="dropdown-container main-dropdown-item" v-for="item in hierarchicalStructure" :key="item.tagId"
                 @mouseenter="showChildren(item.tagId)" @mouseleave="hideChildren(item.tagId)">
                 {{ item.name }}
-                <div v-if="item.showChildren">
+                <div v-if="item.showChildren" class="main-dropdown-item">
                     <div v-for="child in item.children" :key="child.tagId">
                         {{ child.name }}
                     </div>

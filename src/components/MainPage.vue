@@ -40,8 +40,10 @@ export default {
 <template>
     <div class="home-section">
         <span>Home</span>
-        <span class="span-sec">                    
-            <img src="../assets/gray-arrow.png" alt="facebook" width="10px" height="10px" style="cursor: pointer;"> संतवाणी</span>
+        <img class="arrow-img" src="../assets/gray-arrow.png" alt="arrow" width="15px" height="15px"
+            style="cursor: pointer;">
+
+        <span class="span-sec"> संतवाणी</span>
     </div>
     <div class="topic" v-if="apiDetails.details">{{ apiDetails.details.title }}</div>
     <div class="mainn">
@@ -68,19 +70,22 @@ export default {
         <div class="share-section">
             <div class="share-series">Share this series:</div>
             <div class="social-media-section">
-                <a
+                <a class="facebook"
                     href="https://www.facebook.com/v5.0/dialog/share?app_id=671373654631248&channel_url=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df21323e34d76334%26domain%3Dacharyaprashant.org%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Facharyaprashant.org%252Ff1e47c230d4f7ec%26relation%3Dopener&display=popup&e2e=%7B%7D&fallback_redirect_uri=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&hashtag=%23AcharyaPrashant&href=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&locale=en_US&next=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3ae4f33e1ff5bc%26domain%3Dacharyaprashant.org%26is_canvas%3Dfalse%26origin%3Dhttps%253A%252F%252Facharyaprashant.org%252Ff1e47c230d4f7ec%26relation%3Dopener%26frame%3Df1bd6132a5bd24%26result%3D%2522xxRESULTTOKENxx%2522&quote=&sdk=joey&version=v5.0">
                     <img src="../assets/facebook.png" alt="facebook" width="30px" height="30px" style="cursor: pointer;">
                 </a>
-                <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&text=%0A&hashtags=AcharyaPrashant,VideoSeries,wisdom,spirituality"
+                <a class="twitter"
+                    href="https://twitter.com/intent/tweet?url=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&text=%0A&hashtags=AcharyaPrashant,VideoSeries,wisdom,spirituality"
                     target="_blank">
-                    <img src="../assets/twitter.png" alt="twitter" width="30px" height="30px" style="cursor: pointer;">
+                    <img src="../assets/twitter.png" alt="twitter" width="30px" height="25px" style="cursor: pointer; margin-top: 4px;">
                 </a>
-                <a href="https://api.whatsapp.com/send/?text=%0Ahttps%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&type=custom_url&app_absent=0"
+                <a class="whatsapp"
+                    href="https://api.whatsapp.com/send/?text=%0Ahttps%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&type=custom_url&app_absent=0"
                     target="_blank">
                     <img src="../assets/whatsapp.png" alt="twitter" width="30px" height="30px" style="cursor: pointer;">
                 </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3"
+                <a class="linkedin"
+                    href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3"
                     target="_blank">
                     <img src="../assets/linkedin.png" alt="twitter" width="30px" height="30px" style="cursor: pointer;">
                 </a>
@@ -89,13 +94,13 @@ export default {
         <div class="recommentded-video">
             <div class="video-series" v-if="apiDetails.details">Video Series ({{ apiDetails.details.coursesCount }})</div>
             <div class="course-grid">
-                <!-- {{ apiDetails.courses }} -->
-                <div v-for="(course,index) in apiDetails.courses" :key="course.id" class="course-item">
+                <div v-for="(course, index) in apiDetails.courses" :key="course.id" class="course-item">
                     <p class="bhaag">{{ `भाग ${index + 1}` }}</p>
                     <h2>{{ course.title }}</h2>
                     <p style="font-size: 14px;">{{ course.subtitle }}</p>
                     <p>{{ formatCourseDuration(course.courseHours) }}</p>
-                    <p>Contribution: {{ course.amount }} <span class="original-amount">{{ `₹${course.originalAmount}` }}</span></p>
+                    <p>Contribution: {{ course.amount }} <span class="original-amount">{{ `₹${course.originalAmount}`
+                    }}</span></p>
                     <p class="language">{{ course.language }}</p>
                     <div class="payment-sec">
                         <div class="cart">ADD TO CART</div>
@@ -130,6 +135,27 @@ export default {
     justify-content: space-between;
 }
 
+.facebook img:hover {
+  content: url('../assets/change-facebook.png'); 
+}
+.twitter img:hover {
+  content: url('../assets/change-twitter.png');
+  width: 30px;
+  height: 30px;
+}
+
+.whatsapp img:hover {
+  content: url('../assets/change-whatsapp.png'); 
+}
+
+.linkedin img:hover {
+  content: url('../assets/change-linkedin.png'); 
+}
+
+
+
+
+
 .container {
     display: flex;
 }
@@ -163,6 +189,10 @@ export default {
     background-color: white;
 }
 
+.arrow-img {
+    margin: 2px 4px 0 4px;
+}
+
 .topic {
     color: #1e293b;
     margin: 1rem 0;
@@ -172,8 +202,11 @@ export default {
 }
 
 .span-sec {
-    font-weight: bold;
-    margin-left: 8px;
+    font-weight: 550;
+    color: #475569;
+    /* margin-left: 8px; */
+    margin-top: 4px;
+    font-size: 13px;
 }
 
 .image-container {
@@ -218,6 +251,7 @@ export default {
     border-bottom: none;
     background-color: #f1f5f9;
 }
+
 .bhaag {
     width: 10%;
     background-color: #94a3b8;
@@ -243,15 +277,20 @@ p {
     padding-top: 3px;
 
 }
+
 .original-amount {
     text-decoration: line-through;
-    margin-left: 5px; /* Add some margin for better visibility */
+    margin-left: 5px;
+    /* Add some margin for better visibility */
     top: 2px;
 }
+
 .language {
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
     width: 40px;
     height: 20px;
     background-color: #c7e6f8;
@@ -259,6 +298,7 @@ p {
     font-size: 0.75rem;
     margin-top: 0.5rem;
 }
+
 .payment-sec {
     margin-top: 0.5rem;
     width: 40%;
@@ -266,6 +306,7 @@ p {
     justify-content: space-between;
     align-items: center;
 }
+
 .enrol {
     font-size: 12px;
     color: #ed8529;
