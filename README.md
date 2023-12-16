@@ -17,7 +17,7 @@ This Vue.js project aims to replicate the Acharya Prashant web page [here](https
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/himani-mehra/acharya.git
+  git clone https://github.com/himani-mehra/acharya.git
    
 2. Navigate to the project directory:
        cd Vue_project
@@ -31,7 +31,27 @@ This Vue.js project aims to replicate the Acharya Prashant web page [here](https
 6. Open your browser and visit http://localhost:8080 to view the replica.
 
 
-   
+## Project Details
+  The project was created to replicate the Acharya Prashant web page using Vue.js , as a given assignment to me . I was provided with a reference webpage , to assess my frontend skills of html, css, JS framework. 
+  ### Features: Responsive design
+                Data fetched from API endpoints
+
+  ###Challenges Faced:
+        I picked up bottom up approach and hence started with the integration of FAQ section API. but as I reached to top and began integrating the search bar API , I faced issues in displaying in the similar          manner as specified in the refernce page , however , data is picked up perfectly from the API and the mapping is also working fine (Parent to child mapping).
+ 
+  ### Proud Achievements: I gained confidence as I completed the page within 1.5 days of assignment day , maining attention to details (as you can observe the minute details in arrow icons , naming conventions, code formatting , code cleaning , or social media icons changing on mouse hover , transion timing , providing href for all buttons) however , I was stuck the the UX for search popup modal issue.
+
+  ### Technologies Used: HTML , CSS , Vue.js
+
+  ### Future Plans : Will fix the  UX for search modal popup
+
+  ## Contact : Himani Mehra
+              GitHub Profile: https://github.com/himani-mehra 
+              Linkedin Profile: https://www.linkedin.com/in/himani-mehra/
+  
+  
+
+
     
 
 
