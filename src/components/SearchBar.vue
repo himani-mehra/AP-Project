@@ -2,7 +2,6 @@
 import axios from 'axios';
 
 const emitClickEvent = () => {
-    // Emit a custom event to notify the parent component
     emit('click');
 };
 
@@ -19,13 +18,11 @@ export default {
         async fetchDataFromApi() {
             try {
                 const response = await axios.get('https://api.acharyaprashant.org/v2/legacy/courses/tags');
-                // alert(JSON.stringify(response))
                 this.dataApi = response.data;
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         }
-
     }
 };
 </script>
@@ -33,7 +30,6 @@ export default {
 <template>
     <div class="container">
         <div class="left"><img src="../assets/video-series.png" alt="series" style="cursor: pointer;">
-
             <div class="search-bar">
                 <div class="all-dropdown" @click="emitClickEvent">
                     <button class="all">All</button>
@@ -44,7 +40,6 @@ export default {
                     <img src="../assets/search.png" width="20px">
                 </button>
             </div>
-
         </div>
         <div class="right">
             <button class="login">Login</button>
@@ -146,4 +141,5 @@ span {
     cursor: pointer;
     font-size: 15px;
 
-}</style>
+}
+</style>

@@ -8,23 +8,18 @@ export default {
         };
     },
     mounted() {
-        // Make the API call when the component is mounted
         this.fetchDataFromApi();
     },
     methods: {
         async fetchDataFromApi() {
             try {
-                // Replace 'https://api.example.com/data' with your actual API endpoint
                 const response = await axios.get('https://api.acharyaprashant.org/v2/legacy/courses/series/optuser/course-series-eeb9d3');
-                // Assuming the API returns an array of items
-                // alert(JSON.stringify(response))
                 this.apiDetails = response.data;
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         },
         getImageUrl(thumbnail) {
-            // Construct and return the image URL
             return `${thumbnail.domain}/${thumbnail.basePath}/${thumbnail.key}`;
         },
         formatCourseDuration(courseHours) {
@@ -49,7 +44,6 @@ export default {
     <div class="mainn">
         <div class="container">
             <div class="left-section" v-if="apiDetails.details">
-                <!-- <img :src="getImageUrl(apiDetails.details.thumbnail)" alt="Course Thumbnail"> -->
                 <div class="image-container">
                     <img class="image"
                         src="https://cimg.acharyaprashant.org/images/img-4337ee73-d8a3-4c8b-951b-d09a5a6468d3/10/image.jpg"
@@ -77,7 +71,8 @@ export default {
                 <a class="twitter"
                     href="https://twitter.com/intent/tweet?url=https%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&text=%0A&hashtags=AcharyaPrashant,VideoSeries,wisdom,spirituality"
                     target="_blank">
-                    <img src="../assets/twitter.png" alt="twitter" width="30px" height="25px" style="cursor: pointer; margin-top: 4px;">
+                    <img src="../assets/twitter.png" alt="twitter" width="30px" height="25px"
+                        style="cursor: pointer; margin-top: 4px;">
                 </a>
                 <a class="whatsapp"
                     href="https://api.whatsapp.com/send/?text=%0Ahttps%3A%2F%2Facharyaprashant.org%2Fen%2Fcourses%2Fseries%2Fcourse-series-eeb9d3&type=custom_url&app_absent=0"
@@ -136,20 +131,21 @@ export default {
 }
 
 .facebook img:hover {
-  content: url('../assets/change-facebook.png'); 
+    content: url('../assets/change-facebook.png');
 }
+
 .twitter img:hover {
-  content: url('../assets/change-twitter.png');
-  width: 30px;
-  height: 30px;
+    content: url('../assets/change-twitter.png');
+    width: 30px;
+    height: 30px;
 }
 
 .whatsapp img:hover {
-  content: url('../assets/change-whatsapp.png'); 
+    content: url('../assets/change-whatsapp.png');
 }
 
 .linkedin img:hover {
-  content: url('../assets/change-linkedin.png'); 
+    content: url('../assets/change-linkedin.png');
 }
 
 
@@ -352,4 +348,5 @@ p {
     .greetings h3 {
         text-align: left;
     }
-}</style>
+}
+</style>

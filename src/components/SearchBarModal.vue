@@ -46,8 +46,8 @@ export default {
             });
         },
         shouldShowArrow(parentItem) {
-      return parentItem.children.some(child => child.parent === parentItem.tagId);
-    },
+            return parentItem.children.some(child => child.parent === parentItem.tagId);
+        },
         closeModal() {
             this.$emit('close');
         },
@@ -60,31 +60,26 @@ export default {
 
 <template>
     <div class="modal" @click="closeModal">
-      <div class="modal-content" @click.stop>
-        <div class="main-dropdown-item">
-          All
-        </div>
-        <div
-          class="dropdown-container main-dropdown-item"
-          v-for="item in hierarchicalStructure"
-          :key="item.tagId"
-          @mouseenter="showChildren(item.tagId)"
-          @mouseleave="hideChildren(item.tagId)"
-        >
-          {{ item.name }}
-          <div class="arrow" v-if="shouldShowArrow(item)">
-            <img src="../assets/gray-arrow.png" alt="gray arrow" class="gray-arrow" />
-            <img src="../assets/orange-arrow.png" alt="orange arrow" class="orange-arrow" />
-          </div>
-          <div v-if="item.showChildren" class="dropdown-children">
-            <div class="main-dropdown-item" v-for="child in item.children" :key="child.tagId">
-              {{ child.name }}
+        <div class="modal-content" @click.stop>
+            <div class="main-dropdown-item">
+                All
             </div>
-          </div>
+            <div class="dropdown-container main-dropdown-item" v-for="item in hierarchicalStructure" :key="item.tagId"
+                @mouseenter="showChildren(item.tagId)" @mouseleave="hideChildren(item.tagId)">
+                {{ item.name }}
+                <div class="arrow" v-if="shouldShowArrow(item)">
+                    <img src="../assets/gray-arrow.png" alt="gray arrow" class="gray-arrow" />
+                    <img src="../assets/orange-arrow.png" alt="orange arrow" class="orange-arrow" />
+                </div>
+                <div v-if="item.showChildren" class="dropdown-children">
+                    <div class="main-dropdown-item" v-for="child in item.children" :key="child.tagId">
+                        {{ child.name }}
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </template>
+</template>
 
 <style scoped>
 .modal {
@@ -174,6 +169,7 @@ export default {
     font-weight: 700;
     color: #515151;
 }
+
 .main-dropdown-item:hover {
     color: #ee7a3e;
 }
@@ -184,16 +180,8 @@ export default {
     cursor: pointer;
 }
 
-
-
-
-
-
-
-
-  .dropdown-children {
-    max-height: 200px; /* Set the maximum height you want */
-    overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  }
-
+.dropdown-children {
+    max-height: 200px;
+    overflow-y: auto;
+}
 </style>

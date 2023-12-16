@@ -4,25 +4,24 @@
   <div class="main-container">
     <div class="container">
       <span>
-        <img class="img-sec" src="../assets/logo.png" alt="facebook" width="40px" height="35px"
-          style="cursor: pointer;">
+        <img class="img-sec" src="../assets/logo.png" alt="facebook" width="40px" height="35px" style="cursor: pointer;">
       </span>
-      <span>Home</span>
+      <span> <a href="https://acharyaprashant.org/" target="_blank">Home</a></span>
       <span class="down-arrow">
         <span class="live-session">Live Sessions</span>
         <img class="img-sec" src="../assets/inverted-arrow.png" alt="facebook" width="15px" height="15px"
           style="cursor: pointer;">
       </span>
       <span>Video Series</span>
-      <span>AP books</span>
-      <span>AP articles</span>
+      <span> <a href="https://acharyaprashant.org/en/books" target="_blank">AP books</a> </span>
+      <span> <a href="https://acharyaprashant.org/en/articles" target="_blank">AP articles</a> </span>
       <span class="down-arrow">
         <span class="live-session">Invite</span>
         <img class="img-sec" src="../assets/inverted-arrow.png" alt="facebook" width="15px" height="15px"
           style="cursor: pointer;">
       </span>
-      <span>In Media</span>
-      <span>Donate</span>
+      <span> <a href="https://acharyaprashant.org/en/media" target="_blank" >In Media</a> </span>
+      <span> <a href="https://acharyaprashant.org/en/contribute" target="_blank" >Donate</a> </span>
     </div>
     <div class="right-container">
       <img src="../assets/right-header.png" alt="contact" style="cursor: pointer;">
@@ -52,9 +51,10 @@
   color: rgb(233, 228, 228);
 }
 
-span {
+span , a {
   font-weight: 600;
   font-size: 15px;
+  cursor: pointer;
 }
 
 .down-arrow {
@@ -104,4 +104,5 @@ span {
   .greetings h3 {
     text-align: left;
   }
-}</style>
+}
+</style>
