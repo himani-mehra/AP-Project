@@ -34,6 +34,11 @@ This Vue.js project aims to replicate the Acharya Prashant web page [here](https
   The project was created to replicate the Acharya Prashant web page using Vue.js , as a given assignment to me . I was provided with a reference webpage , to assess my frontend skills of html, css, JS framework. 
   ### Features: Responsive design
   Data fetched from API endpoints
+  ![image](https://github.com/himani-mehra/acharya/assets/73715725/18fecfb8-c891-4762-9f50-179c331f2cd2)
+![image](https://github.com/himani-mehra/acharya/assets/73715725/accc8821-d0dc-45a2-b1fe-8b91827f8dd3)
+![image](https://github.com/himani-mehra/acharya/assets/73715725/0be3bc71-3030-4168-a32c-c9c07a062022)
+
+
 
   ### Challenges Faced:
 I picked up bottom up approach and hence started with the integration of FAQ section API. but as I reached to top and began integrating the search bar           API , I faced issues in displaying in the similar  manner as specified in the refernce page , however , data is picked up perfectly from the             API and the mapping is also working fine (Parent to child mapping).
