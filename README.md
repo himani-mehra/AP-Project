@@ -1,29 +1,38 @@
-# Vue Projects
+# Vue.js Acharya Prashant Web Page Replica
 
-This template should help get you started developing with Vue 3 in Vite.
+## Project Overview
 
-## Recommended IDE Setup
+This Vue.js project aims to replicate the Acharya Prashant web page [here](https://acharyaprashant.org/en/courses/series/course-series-eeb9d3). The project fetches data from three API endpoints to populate the content.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### What the Project Does
 
-## Customize configuration
+- Recreates the layout and design of the Acharya Prashant web page.
+- Utilizes three API endpoints to fetch data:
+  - [Course Series Data](https://api.acharyaprashant.org/v2/legacy/courses/series/optuser/course-series-eeb9d3)
+  - [Course Tags](https://api.acharyaprashant.org/v2/legacy/courses/tags)
+  - [FAQs](https://api.acharyaprashant.org/v2/legacy/courses/faqs?language=english)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## How to Use
 
-## Project Setup
+1. Clone the repository:
 
-```sh
-npm install
-```
+   ```bash
+   git clone https://github.com/himani-mehra/acharya.git
+   
+2. Navigate to the project directory:
+       cd Vue_project
 
-### Compile and Hot-Reload for Development
+3. Install dependencies:
+      npm install
+   
+5. Run the development server:
+     npm run dev
 
-```sh
-npm run dev
-```
+6. Open your browser and visit http://localhost:8080 to view the replica.
 
-### Compile and Minify for Production
 
-```sh
-npm run build
-```
+   
+    
+
+
+
