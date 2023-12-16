@@ -23,7 +23,7 @@ This Vue.js project aims to replicate the Acharya Prashant web page [here](https
        cd Vue_project
 
 3. Install dependencies:
-      npm install
+   ```npm install
    
 5. Run the development server:
      npm run dev
@@ -34,7 +34,7 @@ This Vue.js project aims to replicate the Acharya Prashant web page [here](https
 ## Project Details
   The project was created to replicate the Acharya Prashant web page using Vue.js , as a given assignment to me . I was provided with a reference webpage , to assess my frontend skills of html, css, JS framework. 
   ### Features: Responsive design
-                Data fetched from API endpoints
+  Data fetched from API endpoints
 
   ###Challenges Faced:
         I picked up bottom up approach and hence started with the integration of FAQ section API. but as I reached to top and began integrating the search bar API , I faced issues in displaying in the similar          manner as specified in the refernce page , however , data is picked up perfectly from the API and the mapping is also working fine (Parent to child mapping).
