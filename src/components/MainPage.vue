@@ -22,7 +22,7 @@ export default {
         getImageUrl(thumbnail) {
             return `${thumbnail.domain}/${thumbnail.basePath}/${thumbnail.key}`;
         },
-        formatCourseDuration(courseHours) {
+          formatCourseDuration(courseHours) {
             const hours = Math.floor(courseHours);
             const minutes = Math.round((courseHours - hours) * 60);
             const hoursString = hours > 0 ? `${hours} hour${hours > 1 ? 's' : ''}` : '';
@@ -200,7 +200,6 @@ export default {
 .span-sec {
     font-weight: 550;
     color: #475569;
-    /* margin-left: 8px; */
     margin-top: 4px;
     font-size: 13px;
 }
@@ -230,7 +229,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /* Adjust the gap between items as needed */
 }
 
 .course-item {
@@ -277,16 +275,13 @@ p {
 .original-amount {
     text-decoration: line-through;
     margin-left: 5px;
-    /* Add some margin for better visibility */
     top: 2px;
 }
 
 .language {
     display: flex;
     align-items: center;
-    /* Center vertically */
     justify-content: center;
-    /* Center horizontally */
     width: 40px;
     height: 20px;
     background-color: #c7e6f8;
@@ -327,18 +322,14 @@ p {
 @media (max-width: 800px) {
     .course-item {
         flex: 1 0 calc(50% - 20px);
-        /* Two items in a row for smaller screens */
         max-width: calc(50% - 20px);
-        /* Set maximum width accordingly */
     }
 }
 
 @media (max-width: 600px) {
     .course-item {
         flex: 1 0 calc(100% - 20px);
-        /* One item in a row for even smaller screens */
         max-width: calc(100% - 20px);
-        /* Set maximum width accordingly */
     }
 }
 
